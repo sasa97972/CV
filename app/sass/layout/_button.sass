@@ -1,0 +1,24 @@
+//--------------
+//     BLOCK
+//--------------
+
+//--------------
+//     ELEMENTS
+//--------------
+.button__link
+  @include link_color($header-color)
+
+//--------------
+//     MODIFICATIONS
+//--------------
+.button_up
+  font-weight: 400
+  letter-spacing: 1px
+  background: $main-text-color
+  border-radius: 3px
+  opacity: 0.5
+  @extend %uppercase
+  @extend %transition
+  &:hover
+    opacity: 1
+

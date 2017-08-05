@@ -1,0 +1,54 @@
+//--------------
+//     BLOCK
+//--------------
+.skills
+  background-color: $darkness-color
+
+//--------------
+//     ELEMENTS
+//--------------
+.skills__description-header
+  text-align: left
+
+.skills__link
+  text-align: center
+  font-weight: 600
+  color: $header-color
+  background-color: $main-text-color
+  @extend %transition
+  &:hover
+    background-color: $advance-color
+
+.skills__container-description
+  border-radius: 4px
+  box-shadow: 0 1px 1px rgba(0,0,0,.05)
+  color: $main-text-color
+  background-color: $header-color
+  @extend %transition
+  &:hover
+    opacity: .5
+    cursor: pointer
+
+.skills__container-item
+  border-radius: 0 0 4px 4px
+  @extend %hide
+
+//--------------
+//     MODIFICATIONS
+//--------------
+.skills__container-description_active
+  color: $header-color
+  background-color: $advance-color
+  border-radius: 4px 4px 0 0
+
+.skills__container-description_active + .skills__container-item
+  background-color: $advance-color
+  color: $header-color
+
+//--------------
+//     MEDIA
+//--------------
+@media (max-width: 729px)
+  .skills__container-description
+    &:hover
+      opacity: 1

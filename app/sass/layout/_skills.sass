@@ -1,0 +1,56 @@
+//--------------
+//     BLOCK
+//--------------
+.skills
+  @extend %section-padding
+  display: block
+
+//--------------
+//     ELEMENTS
+//--------------
+.skills__content
+  @extend %wrapper
+
+.skills__text
+  @extend %flex-row
+
+.skills__description
+  @extend %flexible
+  margin-right: 15px
+
+.skills__description-header
+  margin-bottom: 0
+
+.skills__features
+  @extend %flex-col
+  flex: 2 1 250px
+  align-items: flex-end
+
+.skills__container
+  width: 70%
+  margin-bottom: 10px
+
+.skills__link
+  display: block
+  max-width: 130px
+  padding: 15px 20px
+  margin-bottom: 1.5em
+
+.skills__container-description
+  padding: 20px
+  margin: 0
+
+.skills__container-item
+  padding: 20px
+  margin: 0
+
+//--------------
+//     MEDIA
+//--------------
+@media (max-width: 1000px)
+  .skills__features
+    align-items: center
+
+@media (max-width: 890px)
+  .skills__container
+    width: 100%

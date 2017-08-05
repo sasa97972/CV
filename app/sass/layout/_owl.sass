@@ -1,0 +1,41 @@
+.owl-prev,
+.owl-next
+  @include position(absolute, 50%, null, null, null)
+  transform: translate(0, -50%)
+  color: $main-text-color
+  @extend %transition
+  &:hover
+    color: $advance-color
+
+.owl-prev
+  left: -35px
+
+.owl-next
+  right: -35px
+
+.owl-dots
+  height: 30px
+  padding-top: 10px
+
+.owl-dot
+  position: relative
+  display: inline-block
+  @include size(12px)
+  margin-right: 10px
+
+.owl-dot.active
+  transform: scale(1.5)
+
+.owl-dot.active span
+  @include position(absolute, 1px, 1px, null, null)
+  display: inline-block
+  @include size(8px)
+
+//--------------
+//     MEDIA
+//--------------
+@media (max-width: 1245px)
+  .owl-prev,
+  .owl-next
+    display: none
+

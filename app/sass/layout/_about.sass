@@ -1,0 +1,49 @@
+//--------------
+//     BLOCK
+//--------------
+.about
+  @extend %section-padding
+  display: block
+
+//--------------
+//     ELEMENTS
+//--------------
+.about__content
+  @extend %wrapper
+
+.about__text
+  @extend %flex-row
+
+.about__personal-information
+  @extend %flexible
+  margin-right: 10px
+
+.about__my-photo
+  @extend %flexible
+  flex-basis: 280px
+  max-height: 370px
+  margin-right: 25px
+
+.about__additional-information
+  @extend %flexible
+
+.about__image
+  @include size(100%, 100%)
+
+.about__social-icons
+  padding-top: 15px
+
+.about__social-item
+  display: inline-block
+  & + &
+    margin-left: 5px
+
+//--------------
+//     MEDIA
+//--------------
+@media (max-width: 599px)
+  .about__personal-information
+    margin-bottom: 10px
+
+
+

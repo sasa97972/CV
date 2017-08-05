@@ -1,0 +1,23 @@
+//--------------
+//     BLOCK
+//--------------
+.exp
+  @extend %section-padding
+  display: block
+
+//--------------
+//     ELEMENTS
+//--------------
+.exp__content
+  @extend %wrapper
+
+.exp__img-description
+  width: 100%
+
+.exp__img-container
+  position: relative
+  &:hover .exp__img-description
+    opacity: 1
+
+.exp__img-description
+  @include position(absolute, null, 0, 0, null)

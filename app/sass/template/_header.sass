@@ -1,0 +1,47 @@
+//--------------
+//     BLOCK
+//--------------
+.header
+  overflow: hidden
+  background-image: url(../img/bg-big.jpg)
+  background-size: 100%
+  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(../img/header/bg-big.jpg) 0 / cover fixed
+
+//--------------
+//     ELEMENTS
+//--------------
+.header__content
+  color: $header-color
+
+.header__hero
+  @extend %super-text
+  @extend %z-index
+  font-size: 4.5em
+  @extend %uppercase
+.header__hero-description
+  @extend %super-text
+  @extend %z-index
+
+//--------------
+//     MODIFICATIONS
+//--------------
+
+//--------------
+//     MEDIA
+//--------------
+@media (max-width: 420px)
+  .header
+    background-image: url(../img/header/bg-big.jpg)
+    background-size: 100%
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(../img/header/bg-small.jpg) 0 / cover fixed
+
+  .header__hero
+    font-size: 3.5em
+
+@media (max-width: 379px)
+  .header__hero-description
+    font-size: 1.8em
+
+@media (max-width: 340px)
+  .header__hero-description
+    font-size: 1.6em
