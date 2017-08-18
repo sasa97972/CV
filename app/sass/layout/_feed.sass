@@ -1,0 +1,69 @@
+//--------------
+//     BLOCK
+//--------------
+.feed
+  display: block
+
+//--------------
+//     ELEMENTS
+//--------------
+.feed__inner-wrapper
+  @extend %flex-row
+
+.feed__content
+  @extend %flexible
+  padding: 60px
+
+.feed__img
+  max-width: 100%
+
+.feed__img-container
+  flex: 1 0 300px
+  max-width: 950px
+  padding: 60px
+
+.feed__header
+  margin-top: 0
+  line-height: 1
+
+//--------------
+//     MEDIA
+//--------------
+@media (max-width: 1300px)
+  .feed__form-name,
+  .feed__form-email,
+  .feed__form-message
+    min-width: 100px
+
+  .feed__form-message
+    height: 100px
+
+@media (max-width: 1129px)
+  .feed__inner-wrapper
+    flex-direction: column
+    align-items: center
+
+  .feed__form-name,
+  .feed__form-email,
+  .feed__form-message
+    min-width: 250px
+
+  .feed__content,
+  .feed__img-container
+    padding: 20px 60px
+
+@media (max-width: 500px)
+  .feed__inner-wrapper
+    flex-direction: row
+    text-align: center
+
+  .feed__img-container
+    flex: 1 0 200px
+
+  .feed__img
+    height: 150px
+    min-width: 250px
+
+  .feed__content,
+  .feed__img-container
+    padding: 30px 5px 0

@@ -1,0 +1,28 @@
+//--------------
+//     BLOCK
+//--------------
+.letter
+  display: block
+  @extend %section-padding
+
+//--------------
+//     ELEMENTS
+//--------------
+.letter__content
+  @extend %wrapper
+  position: relative
+  padding: 20px 40px
+  &:before
+    content: ""
+    @include position(absolute,0,0,0,0)
+    margin: -30px
+
+//--------------
+//     MEDIA
+//--------------
+@media (max-width: 410px)
+  .letter
+    padding: 20px 10px
+  .letter__content
+    padding: 5px 10px
+

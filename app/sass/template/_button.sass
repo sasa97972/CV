@@ -15,3 +15,20 @@
 .button_up
   display: none
   @include position(fixed, null, null, 10px, 10px)
+  z-index: 999
+
+
+.btn_form
+  cursor: pointer
+  padding: 25px 80px
+  display: inline-block
+  text-transform: uppercase
+  letter-spacing: 1px
+  position: relative
+  transition: all 1s
+  border: 3px solid #fff
+  color: $main-text-color
+  &:hover
+    color: #fff
+    background: $main-text-color
+

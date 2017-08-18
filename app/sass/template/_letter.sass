@@ -1,0 +1,36 @@
+//--------------
+//     BLOCK
+//--------------
+.letter
+  background-image: url(../img/letter/bg-letter.jpg)
+  background-size: 100%
+  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(../img/letter/bg-letter.jpg) 0 / cover fixed
+
+//--------------
+//     ELEMENTS
+//--------------
+.letter__content
+  background: hsla(0,0%,100%,.8)
+  overflow: hidden
+  @extend %z-index
+  color: $header-color
+  box-shadow: 0 0 1px 2px white
+  border-radius: 10px
+  &:before
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(../img/letter/bg-letter.jpg) 0 / cover fixed
+    filter: blur(20px)
+    z-index: -1
+
+.letter__text
+  font-size: 1.2em
+
+//--------------
+//     MEDIA
+//--------------
+@media (max-width: 410px)
+ .letter__content
+   color: $main-text-color
+   &:before
+     display: none
+
+

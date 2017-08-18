@@ -1,4 +1,15 @@
 $(document).ready(function() {
+    //--------------
+    //     Header
+    //--------------
+    function heightDetect() {
+        $(".header").css("height", $(window).height());
+    }
+    heightDetect();
+    $(window).resize(function() {
+        heightDetect();
+    });
+
 
     //--------------
     //     Slow scroll
@@ -11,56 +22,71 @@ $(document).ready(function() {
     //--------------
     //     Responsive menu
     //--------------
-    $(".nav__responsive-mnu").click(function() {
-        $(".nav__list").slideToggle(500);
-        $(".nav__lines").toggleClass("nav__lines_active");
+    var nav__list = $(".nav__list");
+    var nav__lines = $(".nav__lines");
+    var nav__link = $(".nav__link");
+    var nav__responsive = $(".nav__responsive-mnu");
+    nav__responsive.click(function() {
+        nav__list.slideToggle(700);
+        nav__lines.toggleClass("nav__lines_active");
     });
-    $(".nav__link").click(function() {
-    if ($(".nav__responsive-mnu").is(':visible') && $(".nav__list").is(':visible')) {
-        $(".nav__list").slideToggle(500);
-        $(".nav__lines").toggleClass("nav__lines_active");
+    nav__link.click(function() {
+    if (nav__responsive.is(':visible') && nav__list.is(':visible')) {
+        nav__list.slideToggle(700);
+        nav__lines.toggleClass("nav__lines_active");
     }});
 
     //--------------
     //     Fixed menu
     //--------------
-    var $menu = $("nav");
-    $(window).scroll(function(){
-        if (!$(".nav__responsive-mnu").is(':visible')) {
-            if ( $(this).scrollTop() > 1){
-                $("nav").addClass("nav_collapse");
-            } else if($(this).scrollTop() <= 1) {
-                $("nav").removeClass("nav_collapse");
-            }
-        }
-    });
+    if (!nav__responsive.is(':visible')) {
+        var menu = $("nav");
+        $(window).scroll(function () {
+                if ($(this).scrollTop() > 1) {
+                    menu.addClass("nav_collapse");
+                } else {
+                    menu.removeClass("nav_collapse");
+                }
+        });
+    }
 
     //--------------
     //     Button UP
     //--------------
-    var $button = $(".button_up");
+    var button = $(".button_up");
     $(window).scroll(function(){
         if ( $(this).scrollTop() > 100){
-            $button.fadeIn('fast');
+            button.fadeIn('fast');
         } else if($(this).scrollTop() <= 100) {
-            $button.fadeOut('fast');
+            button.fadeOut('fast');
         }
     });
 
     //--------------
     //     Skills
     //--------------
-    $(".skills__container-description").click(function() {
-        $(this).toggleClass("skills__container-description_active");
-        $(this).next().slideToggle(500);
-    });
+    var skills__container = $(".skills__container-description");
+        skills__container.click( function () {
+            if ($(this).next().is(":visible")) {
+                this.classList.toggle("skills__container-description_active");
+                $(this).next().slideToggle(500);
+            } else {
+                skills__container.each(function () {
+                    if ($(this).next().is(":visible")) {
+                        $(this).next().slideToggle(500);
+                        this.classList.toggle("skills__container-description_active");
+                    }
+                });
+                this.classList.toggle("skills__container-description_active");
+                $(this).next().slideToggle(500);
+            }
+        });
 
     //--------------
     //     Owl
     //--------------
     $(".owl-carousel").owlCarousel({
         animateOut: 'slideOutDown',
-        animateIn: 'flipInX',
         items:1,
         smartSpeed:450,
         nav: true,
@@ -68,4 +94,21 @@ $(document).ready(function() {
         loop: true
     });
 
+    //--------------
+    //     ANIMATION
+    //--------------
+    if ($(window).width() > 500) {
+        $(".header__hero-description").animated("swing");
+        $(".about__my-photo").animated("flipInY");
+        $(".about__personal-information").animated("fadeInLeft");
+        $(".about__additional-information").animated("fadeInRight");
+        skills__container.animated("fadeInUp", "fadeOutDown");
+        $(".skills__description").animated("fadeInUp");
+        $(".exp__inner-img").animated("zoomIn");
+        $(".exp__paragraph").animated("slideInUp");
+        $(".letter__content").animated("slideInRight");
+        $(".feed__img-container").animated("fadeInLeft");
+        $(".feed__content").animated("fadeInRight");
+    }
 });
+
