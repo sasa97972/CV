@@ -800,9 +800,9 @@ ul {
   font-size: 1.2em;
 }
 
-@media (max-width: 410px) {
+@media (max-width: 1281px) {
   .letter__content {
-    color: #515769;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   .letter__content:before {
     display: none;
@@ -880,6 +880,10 @@ ul {
 .feed__header {
   margin-top: 0;
   line-height: 1;
+}
+
+.feed__input {
+  width: 100%;
 }
 
 @media (max-width: 1300px) {
