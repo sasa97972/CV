@@ -47,13 +47,13 @@
   src: local("Dancing Script Bold"), url("../fonts/dancing-script-v8-latin-700.woff2") format("woff2"), url("../fonts/dancing-script-v8-latin-700.woff") format("woff");
 }
 
-.header__content, .nav__content, .about__content, .skills__content, .exp__content, .letter__content, .footer__content {
+.header__content, .nav__content, .footer__content {
   max-width: 1170px;
   height: 100%;
   margin: 0 auto;
 }
 
-.nav__content, .about__text, .skills__text, .feed__inner-wrapper, .footer__text {
+.nav__content, .feed__inner-wrapper, .footer__text {
   display: block;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -100,7 +100,7 @@ h2, .header__hero, .nav__link, .button_up {
   padding: 60px 0;
 }
 
-.about__personal-information, .about__my-photo, .about__additional-information, .skills__description, .feed__content {
+.feed__content {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 250px;
           flex: 1 1 250px;
@@ -109,18 +109,6 @@ h2, .header__hero, .nav__link, .button_up {
 .header__hero, .header__hero-description, .img__header-description, .img__text-description {
   text-align: center;
   text-shadow: 0 -1px 1px black;
-}
-
-@media (max-width: 1190px) {
-  .about, .skills, .exp, .letter {
-    padding: 60px 30px;
-  }
-}
-
-@media (max-width: 599px) {
-  .about, .skills, .exp, .letter {
-    padding: 30px 30px;
-  }
 }
 
 * {
@@ -562,8 +550,6 @@ ul {
 
 .about__my-photo {
   border-radius: 10px;
-  -webkit-box-shadow: 0px 8px 4px -4px black;
-          box-shadow: 0px 8px 4px -4px black;
 }
 
 .about__image {
@@ -577,24 +563,22 @@ ul {
   }
 }
 
+@media (max-width: 751px) {
+  .about__my-photo {
+    text-align: center;
+  }
+}
+
 .about {
   display: block;
 }
 
-.about__personal-information {
-  margin-right: 10px;
-}
-
-.about__my-photo {
-  -ms-flex-preferred-size: 280px;
-      flex-basis: 280px;
-  max-height: 370px;
-  margin-right: 25px;
+.about__text {
+  padding-top: 30px;
 }
 
 .about__image {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
 }
 
 .about__social-icons {
@@ -612,6 +596,18 @@ ul {
 @media (max-width: 599px) {
   .about__personal-information {
     margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 751px) {
+  .about__image {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .about__additional-information {
+    margin-top: 20px;
   }
 }
 
@@ -678,6 +674,11 @@ ul {
 
 .skills__description-header {
   margin-bottom: 0;
+  padding: 10px 0;
+}
+
+.skills__description-text {
+  padding: 10px 0;
 }
 
 .skills__features {
@@ -690,7 +691,7 @@ ul {
 }
 
 .skills__container {
-  width: 70%;
+  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -750,6 +751,10 @@ ul {
 
 .exp {
   display: block;
+}
+
+.exp__paragraph {
+  padding: 20px 0;
 }
 
 .exp__img-description {
@@ -828,12 +833,36 @@ ul {
   margin: -30px;
 }
 
+.letter__text {
+  padding-top: 20px;
+}
+
+.letter__header {
+  width: 100%;
+}
+
 @media (max-width: 410px) {
   .letter {
     padding: 20px 10px;
   }
   .letter__content {
     padding: 5px 10px;
+  }
+  .letter__header-container {
+    padding-top: 10px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .letter {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 413px) {
+  .letter__text {
+    margin: 0;
   }
 }
 

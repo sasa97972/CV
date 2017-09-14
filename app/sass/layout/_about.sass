@@ -8,27 +8,11 @@
 //--------------
 //     ELEMENTS
 //--------------
-.about__content
-  @extend %wrapper
-
 .about__text
-  @extend %flex-row
-
-.about__personal-information
-  @extend %flexible
-  margin-right: 10px
-
-.about__my-photo
-  @extend %flexible
-  flex-basis: 280px
-  max-height: 370px
-  margin-right: 25px
-
-.about__additional-information
-  @extend %flexible
+  padding-top: 30px
 
 .about__image
-  @include size(100%, 100%)
+  max-width: 100%
 
 .about__social-icons
   padding-top: 15px
@@ -45,5 +29,10 @@
   .about__personal-information
     margin-bottom: 10px
 
+@media (max-width: 751px)
+  .about__image
+    margin: 20px 0
 
-
+@media (max-width: 991px)
+  .about__additional-information
+    margin-top: 20px

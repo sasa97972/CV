@@ -9,7 +9,6 @@
 //     ELEMENTS
 //--------------
 .letter__content
-  @extend %wrapper
   position: relative
   padding: 20px 40px
   &:before
@@ -17,12 +16,30 @@
     @include position(absolute,0,0,0,0)
     margin: -30px
 
+.letter__text
+  padding-top: 20px
+
+.letter__header
+  width: 100%
+
 //--------------
 //     MEDIA
 //--------------
 @media (max-width: 410px)
   .letter
     padding: 20px 10px
+
   .letter__content
     padding: 5px 10px
 
+  .letter__header-container
+    padding-top: 10px
+    margin: 0
+
+@media (max-width: 575px)
+  .letter
+    padding: 20px
+
+@media (max-width: 413px)
+  .letter__text
+    margin: 0
