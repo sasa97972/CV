@@ -66,27 +66,17 @@ $(document).ready(function() {
     //     Skills
     //--------------
     var skills__container = $(".skills__container-description");
-        skills__container.click( function () {
-            if ($(this).next().is(":visible")) {
-                this.classList.toggle("skills__container-description_active");
-                $(this).next().slideToggle(500);
-            } else {
-                skills__container.each(function () {
-                    if ($(this).next().is(":visible")) {
-                        $(this).next().slideToggle(500);
-                        this.classList.toggle("skills__container-description_active");
-                    }
-                });
-                this.classList.toggle("skills__container-description_active");
-                $(this).next().slideToggle(500);
-            }
-        });
+    var containers = $(".skills__container-item");
+    skills__container.on('click', function() {
+        var container = $(this).next();
+        containers.not(container).slideUp(500).prev().removeClass("skills__container-description_active");
+        container.slideToggle(500).prev().toggleClass("skills__container-description_active");
+    });
 
     //--------------
     //     Owl
     //--------------
     $(".owl-carousel").owlCarousel({
-        animateOut: 'slideOutDown',
         items:1,
         smartSpeed:450,
         nav: true,
